@@ -213,9 +213,30 @@ table.mini tr:last-child td{border-bottom:0}
   .demo{padding:12px}
   #delays table.mini th:nth-child(3),#delays table.mini td:nth-child(3){display:none}
   .proj h3{font-size:30px;overflow-wrap:anywhere}
-  .tile .num{overflow-wrap:anywhere}
   .bars{gap:6px}
   .bar span{font-size:10.5px}
+}
+
+/* hard mobile guard (iOS Safari): nothing may be wider than the screen */
+@media (max-width:760px){
+  html,body{overflow-x:hidden}
+  .grid2{display:flex;flex-direction:column}
+  .grid2>*{width:100%;max-width:100%}
+  .card{max-width:100%;overflow:hidden}
+  .tbl{display:block;width:100%;overflow-x:auto}
+  table.mini{width:100%;table-layout:fixed}
+  table.mini td,table.mini th{overflow-wrap:anywhere;word-break:break-word}
+  .flow span{white-space:normal;overflow-wrap:anywhere}
+  .tag{white-space:normal}
+  .tiles{gap:12px}
+  .tile{height:auto;min-height:220px;padding:20px;gap:10px}
+  .tile.oval{border-radius:28px;padding:22px 18px}
+  .tile .num{font-size:46px;overflow-wrap:normal;word-break:normal;hyphens:none}
+  .t2 .num,.t4 .num{font-size:38px}
+  .tile .cap{font-size:12.5px;line-height:1.3}
+  .tile .label{font-size:10.5px;letter-spacing:.04em}
+  .wv{height:60px}
+  .minibars{height:50px}
 }
 /* ---------- motion ---------- */
 @media (prefers-reduced-motion: no-preference){
@@ -246,9 +267,6 @@ table.mini tr:last-child td{border-bottom:0}
 }
 @media (max-width:600px){
   .wrap{padding:0 16px}
-  .tile{height:260px}
-  .tile .num{font-size:64px}
-  .t2 .num{font-size:52px}.t4 .num{font-size:52px}
   .log{height:360px;padding:14px}
   .msg{max-width:94%}
   .card{padding:22px}
