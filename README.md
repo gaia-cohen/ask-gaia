@@ -4,7 +4,7 @@ Static page (`index.html`) plus one Netlify Function (`netlify/functions/chat.mj
 
 ## Environment variables (Netlify -> Site configuration -> Environment variables)
 - `GEMINI_API_KEY` - required. From https://aistudio.google.com/apikey
-- `GEMINI_MODEL` - optional. Defaults to `gemini-flash-lite-latest`. Pick a model your key can use (AI Studio -> Rate limits).
+- `GEMINI_MODEL` - optional. Defaults to `gemini-3.5-flash-lite` (free tier: 15 requests/min, 500/day on this project), falling back to `gemini-3.1-flash-lite`.
 - `ALLOWED_ORIGIN` - optional, e.g. `https://gaia-cohen.netlify.app`. Blocks calls from other sites.
 
 ## How it behaves
